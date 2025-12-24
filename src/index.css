@@ -12,6 +12,20 @@
     /* Contrast for text */
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Outfit', sans-serif;
+    --watermark-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Dark Mode Variables */
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --card-bg: #2c2c2c;
+    --text-primary: #fffbf5;
+    --text-secondary: #cccccc;
+    --accent-blush: #4a4a4a;
+    --accent-rose: #ea9ab2;
+    --accent-dark: #ffffff;
+    /* White chips in dark mode */
+    --watermark-color: rgba(255, 255, 255, 0.03);
 }
 
 * {
@@ -31,6 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -147,8 +162,8 @@ h2 {
 
 .skill-chip {
     background: var(--accent-dark);
-    color: white;
-    /* Dark chips like reference */
+    color: var(--bg-color);
+    /* Invert text color for chips */
     padding: 0.4rem 1rem;
     border-radius: 50px;
     font-size: 0.85rem;
@@ -201,8 +216,8 @@ h2 {
 }
 
 .project-card {
-    background: white;
-    border: 1px solid #eee;
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 12px;
     padding: 1.2rem;
     height: 100%;
@@ -256,11 +271,11 @@ h2 {
     font-size: 20vw;
     /* Huge responsive text */
     font-weight: 900;
-    color: rgba(0, 0, 0, 0.03);
-    /* Faint watermark */
+    color: var(--watermark-color);
     pointer-events: none;
     z-index: 0;
     line-height: 0.8;
+    transition: color 0.3s ease;
 }
 
 /* Contact Section (Minimal Row) */
@@ -284,6 +299,26 @@ h2 {
     border-bottom-color: var(--accent-rose);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0.7;
+    transition: opacity 0.2s, transform 0.2s;
+    color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     .hero h1 {
@@ -297,5 +332,11 @@ h2 {
     /* Stack on mobile */
     .container {
         padding: 3rem 1.2rem 6rem;
+    }
+
+    .theme-toggle {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.2rem;
     }
 }
