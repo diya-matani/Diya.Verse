@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Inter:wght@400;600&display=swap');
+
+:root {
+    --bg-color: #0f0c29;
+    --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #ffffff;
+    --text-secondary: #E6E6FA;
+    /* Lavender */
+    --accent-pink: #ff69b4;
+    /* Neon Pink */
+    --accent-glow: #bd34fe;
+    /* Purple Glow */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    /* Parallax-ish */
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-pink);
+    text-shadow: 0 0 10px var(--accent-pink);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    letter-spacing: 0.02em;
+}
+
+/* Glassmorphism Utility */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px var(--accent-glow);
+    }
+
+    50% {
+        box-shadow: 0 0 20px var(--accent-pink), 0 0 10px var(--accent-glow);
+    }
+
+    100% {
+        box-shadow: 0 0 5px var(--accent-glow);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Layout */
+/* Layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+    /* Removed top padding completely to be "concise in starting" */
+    position: relative;
+    z-index: 10;
+    /* Above background blobs */
+}
+
+z-index: 10;
+/* Above background blobs */
+}
+
+section {
+    margin-bottom: 3rem;
+    /* Reduced from 6rem */
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #fff, var(--text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Hero */
+.hero {
+    min-height: 45vh;
+    /* Reduced from 80vh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+    /* Small margin for balance */
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(189, 52, 254, 0.5);
+    background: linear-gradient(to right, #fff, var(--text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero .tagline {
+    font-size: 1.5rem;
+    color: var(--accent-pink);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    font-size: 1.1rem;
+}
+
+/* Skills */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.skill-chip {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.skill-chip:hover {
+    background: rgba(255, 105, 180, 0.2);
+    border-color: var(--accent-pink);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+}
+
+/* Experience & Projects Shared */
+.experience-item,
+.project-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Experience Special */
+.experience-item {
+    border-left: 4px solid var(--accent-pink);
+}
+
+/* Project Special */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(189, 52, 254, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    color: var(--accent-pink);
+    margin-bottom: 0.5rem;
+}
+
+.project-tech {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.project-desc li {
+    color: #ddd;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.project-links {
+    margin-top: 1.5rem;
+    font-weight: 500;
+    text-align: right;
+    letter-spacing: 0.05em;
+}
+
+/* Achievement List */
+.achievements-list li {
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    border-left: 3px solid var(--accent-glow);
+    color: #eee;
+}
+
+/* Contact / Footer */
+footer {
+    text-align: center;
+    padding: 4rem 0;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 4rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+}
+
+.contact-links a:hover {
+    transform: scale(1.1);
+}
+
+/* Background Orbs */
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    /* 80-100px blur for soft abstract look */
+    opacity: 0.4;
+    z-index: 0;
+    animation: float 10s infinite ease-in-out;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: #7b2cbf;
+    top: -100px;
+    left: -100px;
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: #ff69b4;
+    bottom: 0%;
+    right: -50px;
+    animation-delay: -5s;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .container {
+        padding: 2rem 1rem;
+    }
+}
