@@ -8,18 +8,14 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <>
-      <div className="orb orb-1"></div>
-      <div className="orb orb-2"></div>
-      <div className="container">
-        <Hero />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Achievements />
-        <Contact />
-      </div>
-    </>
+    <div className="container">
+      <Hero />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Achievements />
+      <Contact />
+    </div>
   );
 }
 

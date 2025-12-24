@@ -5,8 +5,11 @@ export const resumeData = {
     location: "Bhopal, India",
     phone: "+91-7357992305",
     email: "diyamatani0214@gmail.com",
-    linkedin: "https://linkedin.com/in/diya-matani",
     github: "https://github.com/diya-matani",
+    linkedin: "https://linkedin.com/in/diya-matani",
+    leetcode: "https://leetcode.com/u/diya-matani",
+    geeksforgeeks: "https://auth.geeksforgeeks.org/user/diya-matani",
+    resume: "#", // Placeholder for actual resume link
     bio: "Full stack developer with a passion for AI and Data Engineering. I build intelligent systems that solve real-world problems. Currently exploring the depths of Generative AI.",
   },
   education: [
@@ -18,9 +21,9 @@ export const resumeData = {
     },
   ],
   skills: [
-    "Python", "SQL", "Machine Learning", "Feature Engineering", "Explainable AI", 
-    "Google Gemini Pro API", "Prompt Engineering", "Scikit-learn", "LightGBM", 
-    "Pandas", "NumPy", "SciPy", "Flask", "Streamlit", "ETL Pipelines", 
+    "Python", "SQL", "Machine Learning", "Feature Engineering", "Explainable AI",
+    "Google Gemini Pro API", "Prompt Engineering", "Scikit-learn", "LightGBM",
+    "Pandas", "NumPy", "SciPy", "Flask", "Streamlit", "ETL Pipelines",
     "Data Validation", "PostgreSQL", "MySQL", "Git", "GitHub", "VS Code"
   ],
   experience: [
