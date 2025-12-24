@@ -2,14 +2,17 @@ import React from 'react';
 import { resumeData } from '../data/resume';
 
 const Hero = () => {
-    const { name, role, bio } = resumeData.header;
+    const { name, role, bio, github, linkedin, email } = resumeData.header;
 
     return (
-        <section className="hero">
+        <div className="hero">
             <h1>{name}</h1>
-            <p className="tagline">{role}</p>
+            <p style={{ fontWeight: '500', color: '#ea9ab2' }}>{role}</p>
             <p>{bio}</p>
-        </section>
+            <div className="social-row">
+                {/* Simple Icons or Links */}
+            </div>
+        </div>
     );
 };
 

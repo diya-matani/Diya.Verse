@@ -3,27 +3,25 @@ import { resumeData } from '../data/resume';
 
 const Projects = () => {
     return (
-        <section>
+        <div>
             <h2>Projects</h2>
             <div className="projects-grid">
                 {resumeData.projects.map((project, index) => (
-                    <div key={index} className="project-card">
+                    <a key={index} href={project.links.github} target="_blank" rel="noopener noreferrer" className="project-card">
                         <div>
                             <div className="project-title">{project.title}</div>
                             <div className="project-tech">{project.tech}</div>
-                            <ul className="project-desc">
-                                {project.points.slice(0, 2).map((point, idx) => (
-                                    <li key={idx}>{point}</li>
-                                ))}
-                            </ul>
+                            <p className="project-desc-text">
+                                {project.points[0]}
+                            </p>
                         </div>
-                        <div className="project-links">
-                            GitHub | Live Demo
+                        <div style={{ marginTop: '1rem', textAlign: 'right', fontSize: '1.2rem' }}>
+                            ↗
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
-        </section>
+        </div>
     );
 };
 
