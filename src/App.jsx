@@ -10,15 +10,13 @@ import Contact from './components/Contact';
 function App() {
   return (
     <>
-      <Navbar />
       <div className="container">
         <section id="hero"><Hero /></section>
-        <section id="about" style={{ display: 'none' }}></section> {/* Merged into Hero typically, but keeping structure */}
-        <section id="skills"><Skills /></section>
         <section id="experience"><Experience /></section>
         <section id="projects"><Projects /></section>
-        <section id="achievements"><Achievements /></section>
+        <section id="skills"><Skills /></section>
         <section id="contact"><Contact /></section>
+        <section id="achievements"><Achievements /></section>
       </div>
     </>
   );

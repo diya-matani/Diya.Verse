@@ -40,6 +40,19 @@ export const resumeData = {
   ],
   projects: [
     {
+      title: "OptiRoute: Dynamic Fleet Manager",
+      tech: "Python, Streamlit, Pandas, Plotly",
+      links: {
+        github: "https://github.com/diya-matani/OptiRoute",
+        live: "https://optiroutev1.streamlit.app/"
+      },
+      points: [
+        "Dynamic Matching Engine: Assigns vehicles based on real-time availability and compatibility.",
+        "Decision Dashboard: Customizable weights for Cost, Speed, or Sustainability goals.",
+        "Interactive Visualizations: Heatmaps, Fleet Utilization Pies, and Baseline Comparison Charts."
+      ]
+    },
+    {
       title: "Engine Rating Prediction",
       tech: "Python, Streamlit, LightGBM, Scikit-Learn",
       links: { github: "#", live: "#" },
