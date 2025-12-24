@@ -107,7 +107,6 @@ h3 {
 }
 
 /* Layout */
-/* Layout */
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -118,9 +117,7 @@ h3 {
     /* Above background blobs */
 }
 
-z-index: 10;
-/* Above background blobs */
-}
+
 
 section {
     margin-bottom: 3rem;
