@@ -3,16 +3,15 @@ import { resumeData } from '../data/resume';
 
 const Experience = () => {
     return (
-        <section className="fade-in">
+        <section>
             <h2>Experience</h2>
             {resumeData.experience.map((exp, index) => (
                 <div key={index} className="experience-item">
                     <h3 className="exp-role">{exp.role}</h3>
-                    <h4 className="exp-company">{exp.company}</h4>
-                    <span className="exp-date">{exp.duration}</span>
-                    <ul className="project-desc">
+                    <h4 className="exp-company">{exp.company} | {exp.duration}</h4>
+                    <ul className="project-desc" style={{ textAlign: 'left', display: 'inline-block', maxWidth: '90%' }}>
                         {exp.points.map((point, idx) => (
-                            <li key={idx}>{point}</li>
+                            <li key={idx} style={{ marginBottom: '0.3rem', fontSize: '0.9rem' }}>• {point}</li>
                         ))}
                     </ul>
                 </div>

@@ -5,10 +5,10 @@ const Contact = () => {
     const { email, github, linkedin, leetcode, geeksforgeeks, resume } = resumeData.header;
 
     return (
-        <footer className="fade-in">
-            <h2>Let's Connect</h2>
+        <footer style={{ marginTop: '0', background: 'transparent' }}>
+            <h2>Get In Touch</h2>
             <p style={{ maxWidth: '400px', margin: '0 auto', color: '#666' }}>
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                Let's build something amazing together.
             </p>
             <div className="contact-links">
                 <a href={`mailto:${email}`}>Email</a>
@@ -18,6 +18,9 @@ const Contact = () => {
                 <a href={geeksforgeeks} target="_blank" rel="noopener noreferrer">GFG</a>
                 <a href={resume} target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
+            <p style={{ marginTop: '3rem', fontSize: '0.8rem', color: '#aaa' }}>
+                © 2024 Diya Matani
+            </p>
         </footer>
     );
 };

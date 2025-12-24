@@ -3,7 +3,7 @@ import { resumeData } from '../data/resume';
 
 const Skills = () => {
     return (
-        <section className="fade-in">
+        <section>
             <h2>Skills</h2>
             <div className="skills-grid">
                 {resumeData.skills.map((skill, index) => (

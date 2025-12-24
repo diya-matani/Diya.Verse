@@ -1,16 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
@@ -19,17 +9,16 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <nav className="navbar">
             <div className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 DM.
             </div>
             <ul className="nav-links">
-                <li onClick={() => scrollToSection('about')}>About</li>
-                <li onClick={() => scrollToSection('skills')}>Skills</li>
-                <li onClick={() => scrollToSection('experience')}>Experience</li>
-                <li onClick={() => scrollToSection('projects')}>Projects</li>
-                <li onClick={() => scrollToSection('achievements')}>Awards</li>
-                <li onClick={() => scrollToSection('contact')}>Contact</li>
+                {['About', 'Skills', 'Experience', 'Projects', 'Achievements', 'Contact'].map((item) => (
+                    <li key={item} onClick={() => scrollToSection(item.toLowerCase())}>
+                        {item}
+                    </li>
+                ))}
             </ul>
         </nav>
     );
