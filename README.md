@@ -5,7 +5,6 @@ A minimal, single-page portfolio website designed with a focus on **compactness*
 The site features a **Vertical Micro-Portfolio** layout (inspired by *Akhil World*) that presents all key information—Bio, Skills, Experience, and Projects—in a single, focused column for a distraction-free reading experience.
 
 ![Portfolio Preview](public/preview.png)
-*(Note: Add a screenshot of your site here)*
 
 ## ✨ Key Features
 
