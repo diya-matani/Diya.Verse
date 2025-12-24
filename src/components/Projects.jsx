@@ -7,7 +7,7 @@ const Projects = () => {
             <h2>Projects</h2>
             <div className="projects-grid">
                 {resumeData.projects.map((project, index) => (
-                    <a key={index} href={project.links.github} target="_blank" rel="noopener noreferrer" className="project-card">
+                    <div key={index} className="project-card">
                         <div>
                             <div className="project-title">{project.title}</div>
                             <div className="project-tech">{project.tech}</div>
@@ -15,10 +15,17 @@ const Projects = () => {
                                 {project.points[0]}
                             </p>
                         </div>
-                        <div style={{ marginTop: '1rem', textAlign: 'right', fontSize: '1.2rem' }}>
-                            ↗
+                        <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'flex-end', gap: '1rem', fontSize: '0.9rem' }}>
+                            <a href={project.links.github} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>
+                                GitHub
+                            </a>
+                            {project.links.live && project.links.live !== '#' && (
+                                <a href={project.links.live} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: '#ea9ab2' }}>
+                                    Output
+                                </a>
+                            )}
                         </div>
-                    </a>
+                    </div>
                 ))}
             </div>
         </div>
