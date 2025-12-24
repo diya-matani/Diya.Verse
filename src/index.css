@@ -253,7 +253,7 @@ h2 {
     width: 100%;
     text-align: center;
     font-family: var(--font-heading);
-    font-size: 15vw;
+    font-size: 20vw;
     /* Huge responsive text */
     font-weight: 900;
     color: rgba(0, 0, 0, 0.03);
@@ -267,9 +267,21 @@ h2 {
 .contact-row {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.contact-row a {
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: all 0.2s;
+}
+
+.contact-row a:hover {
+    color: var(--accent-rose);
+    border-bottom-color: var(--accent-rose);
 }
 
 /* Responsive */

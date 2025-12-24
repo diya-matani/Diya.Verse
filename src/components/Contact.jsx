@@ -10,7 +10,7 @@ const Contact = () => {
             <p style={{ maxWidth: '400px', margin: '0 auto', color: '#666' }}>
                 Let's build something amazing together.
             </p>
-            <div className="contact-links">
+            <div className="contact-row">
                 <a href={`mailto:${email}`}>Email</a>
                 <a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -18,8 +18,8 @@ const Contact = () => {
                 <a href={geeksforgeeks} target="_blank" rel="noopener noreferrer">GFG</a>
                 <a href={resume} target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
-            <p style={{ marginTop: '3rem', fontSize: '0.8rem', color: '#aaa' }}>
-                © 2024 Diya Matani
+            <p style={{ marginTop: '3rem', fontSize: '0.9rem', color: '#888', fontWeight: '500' }}>
+                © 2025 Diya Matani
             </p>
         </footer>
     );
