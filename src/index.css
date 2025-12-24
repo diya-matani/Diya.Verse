@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Lato:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Lato:wght@300;400;700&display=swap');
 
 :root {
-    --bg-color: #fdfbf7;
-    /* Creamy White */
-    --text-primary: #2d2d2d;
-    /* Charcoal */
-    --text-secondary: #656565;
-    /* Grey */
-    --accent-color: #d4a3b1;
-    /* Dusty Rose */
-    --accent-soft: #f4e1e6;
-    /* Soft Pink */
-    --accent-highlight: #e6c8d3;
-    /* Muted Mauve */
+    --bg-color: #fffbf5;
+    /* Cream */
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --accent-pink: #ecbdcc;
+    /* Blush Pink */
+    --accent-lavender: #e8d5f2;
+    --accent-coral: #ff9eb5;
+    --nav-bg: rgba(255, 251, 245, 0.85);
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -34,245 +35,337 @@ body {
 a {
     color: var(--text-primary);
     text-decoration: none;
-    transition: color 0.3s;
-    border-bottom: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
-a:hover {
-    color: var(--accent-color);
-    border-bottom-color: var(--accent-color);
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    background: transparent;
+}
+
+.navbar.scrolled {
+    padding: 1rem 3rem;
+    background: var(--nav-bg);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links li {
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-coral);
+    transition: width 0.3s;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+.nav-links li:hover {
+    color: var(--accent-coral);
 }
 
 /* Layout */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 0 2rem;
 }
 
 section {
-    margin-bottom: 5rem;
+    padding: 6rem 0;
     opacity: 0;
-    animation: fadeIn 1s ease-out forwards;
+    animation: fadeUp 1s cubic-bezier(0.5, 0, 0, 1) forwards;
 }
 
-@keyframes fadeIn {
+/* Stagger animations for sections could be handled via JS, simpler here */
+section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+section:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+section:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Typography */
+/* Typography & Headings */
 h1,
 h2,
 h3 {
     font-family: var(--font-heading);
-    font-weight: 600;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+    /* Lighter weight for elegance */
     text-align: center;
-    position: relative;
 }
 
-/* Decorative line under headings */
-h2::after {
-    content: '';
+h2 span {
     display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-color);
-    margin: 1rem auto 0;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    color: var(--accent-coral);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
-    min-height: 70vh;
+    min-height: 90vh;
+    /* More spacious for hero */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    /* Subtle decorative gradient blobbish thing */
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--accent-lavender) 0%, rgba(255, 255, 255, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.6;
 }
 
 .hero h1 {
-    font-size: 5rem;
-    letter-spacing: -2px;
-    margin-bottom: 0.5rem;
-    color: #1a1a1a;
+    font-size: 5.5rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    font-style: italic;
 }
 
 .hero .tagline {
-    font-size: 1.25rem;
-    color: var(--accent-color);
-    font-family: var(--font-heading);
-    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 300;
     margin-bottom: 2rem;
 }
 
 .hero p {
-    max-width: 500px;
-    color: var(--text-secondary);
+    max-width: 600px;
     font-size: 1.1rem;
+    color: #555;
 }
 
-/* Skills */
+/* Skills Chips */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 1rem;
 }
 
 .skill-chip {
+    padding: 0.7rem 1.8rem;
     background: white;
-    border: 1px solid var(--accent-highlight);
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
-    border-radius: 4px;
-    /* Slightly squared for editorial look */
-    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+    font-size: 0.95rem;
     color: var(--text-secondary);
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(232, 213, 242, 0.2);
+    /* Lavender shadow */
 }
 
 .skill-chip:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent-color);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    background: var(--accent-lavender);
     color: var(--text-primary);
+    box-shadow: 0 8px 25px rgba(232, 213, 242, 0.5);
 }
 
-/* Experience & Projects Shared */
+/* Cards (Experience & Projects) */
 .experience-item,
 .project-card {
     background: white;
-    padding: 2.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-    /* Very subtle shadow */
-    transition: all 0.4s ease;
-    margin-bottom: 2rem;
+    padding: 3rem;
+    border-radius: 20px;
+    margin-bottom: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(236, 189, 204, 0.1);
+    /* Subtle pink border */
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-item::before,
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-pink), var(--accent-coral));
+    opacity: 0.5;
+    transition: opacity 0.3s;
 }
 
 .experience-item:hover,
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(212, 163, 177, 0.15);
-    /* Soft pink shadow */
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
 }
 
-/* Experience */
-.experience-item {
-    border-left: 3px solid var(--accent-color);
-}
-
-.exp-role {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-}
-
-.exp-company {
-    color: var(--accent-color);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-}
-
-/* Projects */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+.experience-item:hover::before,
+.project-card:hover::before {
+    opacity: 1;
 }
 
 .project-title {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
 .project-tech {
-    color: var(--accent-color);
-    font-size: 0.85rem;
+    color: var(--accent-coral);
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
-    text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 0.5px;
-}
-
-.project-desc li {
-    color: var(--text-secondary);
-    list-style: none;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-}
-
-.project-links {
-    margin-top: 2rem;
-    text-align: right;
-    font-family: var(--font-heading);
-    font-style: italic;
 }
 
 /* Achievements */
 .achievements-list li {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    color: var(--text-secondary);
+    color: var(--text-primary);
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    font-size: 1.1rem;
 }
 
 .achievements-list li::before {
     content: '✦';
-    color: var(--accent-color);
-    margin-right: 1rem;
-    font-size: 1.2rem;
+    color: var(--accent-coral);
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
 }
 
-/* Contact */
+/* Footer / Contact */
 footer {
     text-align: center;
-    padding: 5rem 0;
-    background-color: white;
-    margin-top: 5rem;
+    padding: 4rem 0;
+    background: linear-gradient(to top, #fff, var(--bg-color));
 }
 
 .contact-links {
     display: flex;
     justify-content: center;
-    gap: 3rem;
-    margin-top: 2rem;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
     flex-wrap: wrap;
 }
 
 .contact-links a {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    position: relative;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
 }
 
-.contact-links a:hover {
-    color: var(--accent-color);
+.contact-links a:hover::after {
+    width: 100%;
+    background: var(--accent-coral);
 }
 
-/* Mobile */
+/* Responsive */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 3.5rem;
     }
 
-    .container {
-        padding: 3rem 1.5rem;
+    .navbar {
+        padding: 1rem;
+        justify-content: center;
     }
 
-    h2 {
-        font-size: 2rem;
+    .nav-links {
+        display: none;
+    }
+
+    /* Could add hamburger, but keeping simple for now */
+    .container {
+        padding: 0 1.5rem;
     }
 }
