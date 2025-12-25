@@ -55,7 +55,7 @@ export const resumeData = {
     {
       title: "Engine Rating Prediction",
       tech: "Python, Streamlit, LightGBM, Scikit-Learn",
-      links: { github: "#", live: "https://engineratingprediction.streamlit.app/" },
+      links: { github: "https://github.com/diya-matani/Engine-Rating-Prediction", live: "https://engineratingprediction.streamlit.app/" },
       points: [
         "Developed an end-to-end machine learning system using LightGBM to predict vehicle engine health from 60+ real-world parameters (R² = 0.7).",
         "Performed feature engineering, model tuning, and evaluation to ensure reliable and production-ready predictions.",
@@ -65,7 +65,7 @@ export const resumeData = {
     {
       title: "Energy Insight",
       tech: "Python, Streamlit, Scikit-learn, Google Gemini Pro API",
-      links: { github: "#", live: "https://energyinsight.streamlit.app/" },
+      links: { github: "https://github.com/diya-matani/Energy-Insight-", live: "https://energyinsight.streamlit.app/" },
       points: [
         "Built an AI-based energy optimization system using Random Forest to predict heating and cooling loads from building geometry and sensor data.",
         "Integrated Generative AI (Google Gemini Pro) to convert ML predictions into human-readable energy-saving recommendations.",
@@ -75,7 +75,7 @@ export const resumeData = {
     {
       title: "Marketing Campaign Performance Analytics",
       tech: "Python, Streamlit, Scikit-learn, Statistical Testing",
-      links: { github: "#", live: "https://marketcampaignperformanceanalytics.streamlit.app/" },
+      links: { github: "https://github.com/diya-matani/Market-Campaign-Performance-Analytics", live: "https://marketcampaignperformanceanalytics.streamlit.app/" },
       points: [
         "Applied machine learning and statistical testing to analyze 64,000+ customer records for real-world marketing optimization.",
         "Built Logistic Regression models to predict conversion probability and guide data-driven decision-making.",
