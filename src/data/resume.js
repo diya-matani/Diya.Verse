@@ -7,9 +7,9 @@ export const resumeData = {
     email: "diyamatani0214@gmail.com",
     github: "https://github.com/diya-matani",
     linkedin: "https://linkedin.com/in/diya-matani",
-    leetcode: "https://leetcode.com/u/diya-matani",
-    geeksforgeeks: "https://auth.geeksforgeeks.org/user/diya-matani",
-    resume: "#", // Placeholder for actual resume link
+    leetcode: "https://leetcode.com/u/diyamatani17/",
+    geeksforgeeks: "https://www.geeksforgeeks.org/profile/diyamato5s3",
+    resume: "https://github.com/diya-matani/Resume_Diya_Matani/blob/main/Diya_Matani_AI_Python_Intern_Resume.pdf",
     bio: "Full stack developer with a passion for AI and Data Engineering. I build intelligent systems that solve real-world problems. Currently exploring the depths of Generative AI.",
   },
   education: [
